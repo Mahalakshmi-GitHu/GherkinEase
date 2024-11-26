@@ -2,6 +2,7 @@ import base64
 import streamlit as st
 import pdfplumber
 import fitz
+import pymupdf
 import pandas as pd
 import textdistance
 import re
