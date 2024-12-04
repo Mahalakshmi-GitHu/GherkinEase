@@ -15,7 +15,7 @@ st.set_page_config(
 # Function to load keywords and related details from Excel
 @st.cache_data
 def load_keywords():
-    df = pd.read_excel('keyword_Identified.xlsx', sheet_name='KEYWORDS', header=None)
+    df = pd.read_excel('Keyword Identified.xlsx', sheet_name='KEYWORDS', header=None)
     column_names = df.iloc[6].tolist()  # Extract column names from the 7th row (index 6)
     df = df.iloc[7:].reset_index(drop=True)  # Remove the first 7 rows
     df.dropna(subset=[df.columns[1]], inplace=True)  # Drop rows where the keyword is NaN
