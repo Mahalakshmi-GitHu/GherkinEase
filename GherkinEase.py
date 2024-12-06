@@ -33,12 +33,12 @@ def load_signals():
 # Function to display PDF files
 def display_pdf(file_path):
     with open(file_path, "rb") as file:
-    st.download_button(
-        label="Download Keyword Guidelines",
-        data=file,
-        file_name="Keyword-Guidelines.pdf",
-        mime="application/pdf"
-    )
+        st.download_button(
+            label="Download Keyword Guidelines",
+            data=file,
+            file_name="Keyword-Guidelines.pdf",
+            mime="application/pdf"
+        )
     return    
     st.components.v1.iframe(file_path, width=1000, height=1000, scrolling=True)
     return
