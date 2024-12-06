@@ -678,7 +678,7 @@ def display_keyword_guidelines():
         <h1 class="gradient-text">Keyword Guidelines</h1>
     """, unsafe_allow_html=True)
 
-    display_pdf('Keyword-Guidelines.pdf')
+    display_pdf('https://github.com/Mahalakshmi-GitHu/GherkinEase/blob/main/Keyword-Guidelines.pdf')
     
 if __name__ == '__main__':
     main()
