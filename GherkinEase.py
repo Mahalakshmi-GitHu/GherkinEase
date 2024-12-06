@@ -32,6 +32,8 @@ def load_signals():
  
 # Function to display PDF files
 def display_pdf(file_path):
+    st.components.v1.iframe(file_path, width=1000, height=1000, scrolling=True)
+    return
     with open(file_path, 'rb') as pdf_file:
         pdf_data = pdf_file.read()
         base64_pdf = base64.b64encode(pdf_data).decode('utf-8')
