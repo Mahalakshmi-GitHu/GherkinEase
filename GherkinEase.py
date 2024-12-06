@@ -32,11 +32,14 @@ def load_signals():
  
 # Function to display PDF files
 def display_pdf(file_path):
+    '''
     with open(file_path, 'rb') as pdf_file:
         pdf_data = pdf_file.read()
         base64_pdf = base64.b64encode(pdf_data).decode('utf-8')
     pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="1000" height="1000" type="application/pdf"></iframe>'
     st.markdown(pdf_display, unsafe_allow_html=True)
+    '''
+    st.components.v1.iframe(pdf_display, width=800, height=600)
  
 # Load keywords, guidelines and signals from the Excel sheets
 df, keywords_dict, column_names = load_keywords()
@@ -678,7 +681,7 @@ def display_keyword_guidelines():
         <h1 class="gradient-text">Keyword Guidelines</h1>
     """, unsafe_allow_html=True)
 
-    display_pdf('https://github.com/Mahalakshmi-GitHu/GherkinEase/blob/main/Keyword-Guidelines.pdf')
+    display_pdf('Keyword-Guidelines.pdf')
     
 if __name__ == '__main__':
     main()
