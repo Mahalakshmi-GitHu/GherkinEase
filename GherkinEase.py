@@ -31,13 +31,7 @@ def load_signals():
     return rx_df, tx_df
  
 # Function to display PDF files
-def display_pdf(file_path):
-    with open(file_path, 'rb') as pdf_file:
-        pdf_data = pdf_file.read()
-        base64_pdf = base64.b64encode(pdf_data).decode('utf-8')
-    pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="1000" height="1000" type="application/pdf"></iframe>'
-    st.markdown(pdf_display, unsafe_allow_html=True)
-    return
+def display_pdf(file_path):    
     st.components.v1.iframe(file_path, width=800, height=1000, scrolling=True)        
     with open(file_path, "rb") as file:        
         st.download_button(
