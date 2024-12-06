@@ -32,19 +32,15 @@ def load_signals():
  
 # Function to display PDF files
 def display_pdf(file_path):
-    pdf_display = f'<object data="{file_path}" type="application/pdf" width="800" height="600"></object>'
-    st.markdown(pdf_display, unsafe_allow_html=True)  
-    
+        
     with open(file_path, "rb") as file:
+        st.components.v1.iframe(file_path, width=1000, height=1000, scrolling=True)
         st.download_button(
             label="Download Keyword Guidelines",
             data=file,
             file_name="Keyword-Guidelines.pdf",
             mime="application/pdf"
-        )  
-      
-    return    
-    st.components.v1.iframe(file_path, width=1000, height=1000, scrolling=True)
+        )      
     return
     with open(file_path, 'rb') as pdf_file:
         pdf_data = pdf_file.read()
