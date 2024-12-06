@@ -48,7 +48,7 @@ def display_pdf(file_path):
     # Create a container to wrap the PDF iframe
     with st.container():
         st.markdown("<div class='top-layout'>", unsafe_allow_html=True)
-        
+        pdf_path = "static/Keyword-Guidelines.pdf"  # Replace with your correct file path
         # Embed the PDF using iframe (make sure the path is correct)       
         st.components.v1.iframe(file_path, width=800, height=600)        
         st.markdown("</div>", unsafe_allow_html=True)
