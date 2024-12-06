@@ -32,9 +32,10 @@ def load_signals():
  
 # Function to display PDF files
 def display_pdf(file_path):
+
+    st.components.v1.iframe(file_path, width=1000, height=1000, scrolling=True)
         
-    with open(file_path, "rb") as file:
-        st.components.v1.iframe(file_path, width=1000, height=1000, scrolling=True)
+    with open(file_path, "rb") as file:        
         st.download_button(
             label="Download Keyword Guidelines",
             data=file,
@@ -688,7 +689,7 @@ def display_keyword_guidelines():
         <h1 class="gradient-text">Keyword Guidelines</h1>
     """, unsafe_allow_html=True)
 
-    display_pdf("Keyword-Guidelines.pdf")
+    display_pdf("static/Keyword-Guidelines.pdf")
     
 if __name__ == '__main__':
     main()
