@@ -35,7 +35,7 @@ def display_pdf(file_path):
     with open(file_path, 'rb') as pdf_file:
         pdf_data = pdf_file.read()
         base64_pdf = base64.b64encode(pdf_data).decode('utf-8')
-    pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
+    pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="1000" height="1000" type="application/pdf"></iframe>'
     st.markdown(pdf_display, unsafe_allow_html=True)
  
 # Load keywords, guidelines and signals from the Excel sheets
