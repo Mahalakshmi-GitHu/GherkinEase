@@ -31,7 +31,30 @@ def load_signals():
     return rx_df, tx_df
  
 # Function to display PDF files
-def display_pdf(file_path):    
+def display_pdf(file_path):
+    st.markdown("""
+        <style>
+            .top-layout {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                margin-top: 20px;
+            }
+        </style>
+        """, unsafe_allow_html=True)
+
+    # Create a container to wrap the PDF iframe
+    with st.container():
+        st.markdown("<div class='top-layout'>", unsafe_allow_html=True)
+        
+        # Embed the PDF using iframe (make sure the path is correct)       
+        st.components.v1.iframe(file_path, width=800, height=600)        
+        st.markdown("</div>", unsafe_allow_html=True)
+
+    return
+    
     st.components.v1.iframe(file_path, width=800, height=1000, scrolling=True)        
     with open(file_path, "rb") as file:        
         st.download_button(
